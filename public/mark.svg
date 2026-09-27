@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 96" fill="none" role="img" aria-label="d-pill">
+  <defs>
+    <linearGradient id="film" x1="12" y1="48" x2="228" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff3d7a"/>
+      <stop offset="0.14" stop-color="#e23cff"/>
+      <stop offset="0.3" stop-color="#5b4dff"/>
+      <stop offset="0.46" stop-color="#19c8ff"/>
+      <stop offset="0.62" stop-color="#2ee6a6"/>
+      <stop offset="0.78" stop-color="#ffe14a"/>
+      <stop offset="0.9" stop-color="#ff7a2e"/>
+      <stop offset="1" stop-color="#ff3d6e"/>
+    </linearGradient>
+    <linearGradient id="volume" x1="120" y1="22" x2="120" y2="74" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.78"/>
+      <stop offset="0.32" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="0.7" stop-color="#1a1028" stop-opacity="0.05"/>
+      <stop offset="1" stop-color="#1a1028" stop-opacity="0.34"/>
+    </linearGradient>
+    <clipPath id="capsule">
+      <rect x="12" y="22" width="216" height="52" rx="26"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#capsule)">
+    <rect x="12" y="22" width="216" height="52" fill="url(#film)"/>
+    <rect x="12" y="22" width="216" height="52" fill="url(#volume)"/>
+    <rect x="119" y="22" width="2" height="52" fill="#ffffff" fill-opacity="0.42"/>
+  </g>
+  <rect x="12.75" y="22.75" width="214.5" height="50.5" rx="25.25" stroke="#1a1028" stroke-opacity="0.28" stroke-width="1.5"/>
+</svg>

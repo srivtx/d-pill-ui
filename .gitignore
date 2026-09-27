@@ -1,0 +1,51 @@
+# dependencies
+node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+dev.log
+server.log
+
+# env files
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# local workspace artifacts — not part of the product
+/d-pill/
+/research/
+/tool-results/
+/download/
+/agent-ctx/
+/db/
+/mini-services/
+/examples/
+/.zscripts/
+/.claude/
+/skills/
+/worklog.md
+/AGENT_SPEC.md
+/scripts/*
+!/scripts/parity-test.ts
+!/scripts/build-laws.ts
+Caddyfile
+/tests/
