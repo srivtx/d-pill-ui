@@ -10,10 +10,11 @@ and a critique gate you can run in the page itself.
   ported to TypeScript with proven parity — same rules, same severities, same
   messages, same exit-code contract. Paste HTML or CSS and read findings that
   teach: every finding carries its fix and the law behind it.
-- **26 blocks.** Heroes, features, bentos, AI surfaces, forms, tables, pricing,
-  navigation — pure HTML and CSS on the token system, no animation library, no
-  runtime. Every block is gate-clean, and the page's self-audit scans the styles
-  they inject into the live DOM.
+- **66 blocks.** Heroes, features, bentos, AI surfaces, forms, tables, pricing,
+  navigation, backgrounds, motion effects, overlays, and full page sections —
+  pure HTML and CSS on the token system, no animation library, no runtime.
+  Every block is gate-clean (combined run: 0 errors, 0 warnings), and the page's
+  self-audit scans the styles they inject into the live DOM.
 - **The token explorer.** All 85 tokens with a live hue dial: turn one variable
   and the entire site — aurora included — re-tints. A contrast matrix computed
   from the token export at the default hue.

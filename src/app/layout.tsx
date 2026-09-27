@@ -16,7 +16,12 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000");
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "d-pill — the design system that audits itself",
   description:
     "d-pill is design intelligence for the agentic era: 85 tokens, 40 laws, 16 machine-checked rules, and a critique gate that runs in your browser, your hooks, your CI. One hue variable re-tints every component. Paste your HTML and watch the gate teach.",

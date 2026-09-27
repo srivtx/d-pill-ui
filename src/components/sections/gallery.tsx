@@ -15,6 +15,10 @@ import { FORM_BLOCKS } from "@/data/blocks/forms";
 import { DATA_BLOCKS } from "@/data/blocks/data";
 import { CONTENT_BLOCKS } from "@/data/blocks/content";
 import { NAV_BLOCKS } from "@/data/blocks/navigation";
+import { BG_BLOCKS } from "@/data/blocks/backgrounds";
+import { MOTION_BLOCKS } from "@/data/blocks/motion";
+import { OVERLAY_BLOCKS } from "@/data/blocks/overlays";
+import { SECTION_BLOCKS } from "@/data/blocks/sections";
 import type { BlockRecord } from "@/data/blocks/types";
 
 const ALL_BLOCKS: BlockRecord[] = [
@@ -25,9 +29,27 @@ const ALL_BLOCKS: BlockRecord[] = [
   ...DATA_BLOCKS,
   ...CONTENT_BLOCKS,
   ...NAV_BLOCKS,
+  ...BG_BLOCKS,
+  ...MOTION_BLOCKS,
+  ...OVERLAY_BLOCKS,
+  ...SECTION_BLOCKS,
 ];
 
-const CATEGORIES = ["All", "Hero", "Features", "AI surfaces", "Forms & auth", "Data & empty", "Content", "Navigation"];
+const CATEGORIES = [
+  "All",
+  "Hero",
+  "Features",
+  "AI surfaces",
+  "Forms & auth",
+  "Data & empty",
+  "Content",
+  "Navigation",
+  "Backgrounds",
+  "Motion & effects",
+  "Overlays & feedback",
+  "Sections",
+];
+const CATEGORY_COUNT = CATEGORIES.length - 1;
 
 async function copy(text: string): Promise<boolean> {
   try {
@@ -146,7 +168,7 @@ export function Gallery() {
           </div>
         </div>
         <p id="block-count" className="quiet num" aria-live="polite">
-          {filtered.length} of {ALL_BLOCKS.length} blocks · 7 categories · 0 animation dependencies
+          {filtered.length} of {ALL_BLOCKS.length} blocks · {CATEGORY_COUNT} categories · 0 animation dependencies
         </p>
         <div className="gallery-grid">
           {filtered.map((b) => (

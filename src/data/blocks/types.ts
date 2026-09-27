@@ -7,7 +7,11 @@ export type BlockCategory =
   | "Forms & auth"
   | "Data & empty"
   | "Content"
-  | "Navigation";
+  | "Navigation"
+  | "Backgrounds"
+  | "Motion & effects"
+  | "Overlays & feedback"
+  | "Sections";
 
 export interface BlockRecord {
   /** kebab-case unique id, e.g. "framed-hero" */

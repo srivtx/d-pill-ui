@@ -698,6 +698,21 @@ export function critiqueDocument(): CritiqueResult {
   if (typeof document === "undefined") {
     return { findings: [], stats: { files: 0, errors: 0, warnings: 0, rules_fired: [] }, exitCode: 0 };
   }
-  const source = document.documentElement.outerHTML;
+  // Scope the scan to product DOM: the dev server injects its own chrome
+  // (nextjs-portal dev tools, next-route-announcer) that never ships. Those
+  // framework elements are not this product's markup, so the audit clones the
+  // document and drops them before serializing — production never renders them.
+  const clone = document.documentElement.cloneNode(true) as HTMLElement;
+  clone
+    .querySelectorAll("nextjs-portal, next-route-announcer, nextjs-viewport, [data-nextjs-dev-tools]")
+    .forEach((el) => el.remove());
+  // Displayed code samples (the gate's teaching fixtures, the "view code"
+  // panes, the law bodies) are TEXT, not styling — when serialized they
+  // re-appear as escaped markup and would false-positive on style-attribute
+  // rules. Blank their text content; real parsed <style> blocks stay.
+  clone.querySelectorAll("pre, code, textarea").forEach((el) => {
+    el.textContent = "";
+  });
+  const source = clone.outerHTML;
   return critique([{ name: "document.html", text: source, kind: "html" }]);
 }
